@@ -4,10 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController
-{
-   // PlayerInputManager.instance.playerCount;
-}
 public class Bed : MonoBehaviour
 {
     private Action OnPlayersReady;
@@ -30,7 +26,6 @@ public class Bed : MonoBehaviour
             playerReadyCount--;
         }
     }
-
 
     public void SubscribeOnPlayersReady(Action _action)
     {

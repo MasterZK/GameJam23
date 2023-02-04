@@ -4,12 +4,13 @@ using UnityEngine.UI;
 
 public enum EGameState
 {
+    INIT,
     DAY,
     NIGHT
 }
 public class GameStateManager : MonoBehaviour
 {
-    [SerializeField] private EGameState currState;
+    [SerializeField] private EGameState currState = EGameState.INIT;
 
     [Header("Day")]
     [SerializeField] private GameObject dayLevel;
@@ -39,6 +40,12 @@ public class GameStateManager : MonoBehaviour
             sunSlider.value = dayTimer / dayTime;
         }
     }
+    private void Start()
+    {
+        dayLevel.SetActive(false);
+        nightLevel.SetActive(false);
+        SetState(EGameState.DAY);
+    }
     private void Update()
     {
         //state update
@@ -54,13 +61,18 @@ public class GameStateManager : MonoBehaviour
     }
     private void SetState(EGameState _nextState)
     {
-        //state exit
-        switch (currState)
+        if (currState != EGameState.INIT)
         {
-            case EGameState.DAY:
-                break;
-            case EGameState.NIGHT:
-                break;
+            //state exit
+            switch (currState)
+            {
+                case EGameState.DAY:
+                    dayLevel.SetActive(false);
+                    break;
+                case EGameState.NIGHT:
+                    nightLevel.SetActive(false);
+                    break;
+            }
         }
         currState = _nextState;
         //state enter
@@ -68,11 +80,13 @@ public class GameStateManager : MonoBehaviour
         {
             case EGameState.DAY:
                 OnDayBreak?.Invoke();
+                dayLevel.SetActive(true);
                 DayTimer = 0;
                 //TODO:Set player position
                 break;
             case EGameState.NIGHT:
                 OnNightFall?.Invoke();
+                nightLevel.SetActive(true);
                 //TODO:Set player position
                 break;
         }
