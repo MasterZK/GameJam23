@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -34,26 +35,38 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(new Vector3(moveInput.x, 0, 0) * PlayerMovespeed * Time.deltaTime);
 
+            if (moveInput.x > 0.2)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else if (moveInput.x < -0.2f)
+            {
+                spriteRenderer.flipX = true;
+            }
+
+
             if (isGrounded)
             {
 
                 if (moveInput.x > 0.2)
                 {
-                    spriteRenderer.flipX = false;
                     ChangeAnimationState("PlayerWalk");
 
                 }
                 else if (moveInput.x < -0.2f)
                 {
-                    spriteRenderer.flipX = true;
                     ChangeAnimationState("PlayerWalk");
-
                 }
                 else
                 {
-                    ChangeAnimationState("PlayerIdle");
-                    Debug.Log("Idle");
+                    if (moveInput.x < -0.2f || moveInput.x < -0.2f) return;
+                  
+                    ChangeAnimationState("PlayerIdle");                   
                 }
+            }
+            else
+            {
+                currentSate = "";
             }
         }
 
@@ -88,6 +101,7 @@ public class PlayerController : MonoBehaviour
         if (ctx.performed && isGrounded && canMove)
         {
             anim.PlayInFixedTime("PlayerJump");
+
             rb.AddForce(Vector3.up * PlayerJumpForce, ForceMode2D.Impulse);
         }
     }
