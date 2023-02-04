@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4b3d7e37accbedc4fabca1b6b5351e2f
+guid: f8048316dbfd48f4783871a80cd7e85f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spritesheet_FarmerJump_Shortend_0
+      name: Spritesheet_ShovelSlash_Silver_shortend_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f2fc6eb108e0364e9244e933671f342
-      internalID: 598087605
+      spriteID: c1dd5542d0b2f414aabcec5e77467975
+      internalID: 1980513004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_FarmerJump_Shortend_1
+      name: Spritesheet_ShovelSlash_Silver_shortend_1
       rect:
         serializedVersion: 2
         x: 64
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 423f5a53d8fc0cb4ea87c6b68173b901
-      internalID: 1148607287
+      spriteID: 876baae8c7dc845488e44c11d2165fc2
+      internalID: -1788745023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_FarmerJump_Shortend_2
+      name: Spritesheet_ShovelSlash_Silver_shortend_2
       rect:
         serializedVersion: 2
         x: 128
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3834cdaf52aeb444fa1d63b90d5d9e7c
-      internalID: 2079879009
+      spriteID: 4211efcda50a93f4982070af1c8af8a1
+      internalID: 1959291634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_FarmerJump_Shortend_3
+      name: Spritesheet_ShovelSlash_Silver_shortend_3
       rect:
         serializedVersion: 2
         x: 192
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f12dd376da869645a785ffc20304d6b
-      internalID: 891983428
+      spriteID: 431024937d85c904384aaf8ffd3d85e5
+      internalID: -1373118437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_FarmerJump_Shortend_4
+      name: Spritesheet_ShovelSlash_Silver_shortend_4
       rect:
         serializedVersion: 2
         x: 256
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99565fc5430f0164b87370b7e054c55c
-      internalID: -1421700816
+      spriteID: 2268efc6b68f04e46ac86320bb2f5863
+      internalID: -2065194684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_FarmerJump_Shortend_5
+      name: Spritesheet_ShovelSlash_Silver_shortend_5
       rect:
         serializedVersion: 2
         x: 320
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a36ce07b6eaead1458809fbf761a7b44
-      internalID: -718984854
+      spriteID: df413e03a864fe34092440354d9f944b
+      internalID: -870307793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_FarmerJump_Shortend_6
+      name: Spritesheet_ShovelSlash_Silver_shortend_6
       rect:
         serializedVersion: 2
         x: 384
@@ -245,71 +245,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b795c0f27aa3e94cb71371f96365ab9
-      internalID: -977423223
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_FarmerJump_Shortend_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: adbf004c05008a24e965f9ab00f7e9fd
-      internalID: -969424908
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_FarmerJump_Shortend_8
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db5db2a9e4531d74aac6438a7829529a
-      internalID: 510485322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_FarmerJump_Shortend_9
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5a618fecfa4bc041aed61492fc4f7a3
-      internalID: -1375097787
+      spriteID: aa06ed6cf7b6fd544b9b9960c95af5b4
+      internalID: -667269451
       vertices: []
       indices: 
       edges: []
@@ -325,16 +262,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spritesheet_FarmerJump_Shortend_4: -1421700816
-      Spritesheet_FarmerJump_Shortend_6: -977423223
-      Spritesheet_FarmerJump_Shortend_3: 891983428
-      Spritesheet_FarmerJump_Shortend_1: 1148607287
-      Spritesheet_FarmerJump_Shortend_7: -969424908
-      Spritesheet_FarmerJump_Shortend_5: -718984854
-      Spritesheet_FarmerJump_Shortend_8: 510485322
-      Spritesheet_FarmerJump_Shortend_2: 2079879009
-      Spritesheet_FarmerJump_Shortend_0: 598087605
-      Spritesheet_FarmerJump_Shortend_9: -1375097787
+      Spritesheet_ShovelSlash_Silver_shortend_1: -1788745023
+      Spritesheet_ShovelSlash_Silver_shortend_4: -2065194684
+      Spritesheet_ShovelSlash_Silver_shortend_6: -667269451
+      Spritesheet_ShovelSlash_Silver_shortend_3: -1373118437
+      Spritesheet_ShovelSlash_Silver_shortend_0: 1980513004
+      Spritesheet_ShovelSlash_Silver_shortend_2: 1959291634
+      Spritesheet_ShovelSlash_Silver_shortend_5: -870307793
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 809b189753841cf46a6738db2a12be80
+guid: cca74737102f5de45962c9254c3cb2b6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spritesheet_FarmerJump1_0
+      name: Spritesheet_ShovelSlash_Bronze_shortend_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 547a7b952b319b549b46c78c62be80e8
-      internalID: -1359009168
+      spriteID: 07441912a1213044c8a4217845ec1ee2
+      internalID: 646006018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_FarmerJump1_1
+      name: Spritesheet_ShovelSlash_Bronze_shortend_1
       rect:
         serializedVersion: 2
         x: 64
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13e7be68a7264ae4092939a16b13b130
-      internalID: -176538247
+      spriteID: a020b1e33ce19cb4a82440970af4ecab
+      internalID: 228702395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_FarmerJump1_2
+      name: Spritesheet_ShovelSlash_Bronze_shortend_2
       rect:
         serializedVersion: 2
         x: 128
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd8df8829aa8f0c4faeb689890689baf
-      internalID: -313201808
+      spriteID: c208674a1eaacd647b724f7121a2718d
+      internalID: -1309487452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_FarmerJump1_3
+      name: Spritesheet_ShovelSlash_Bronze_shortend_3
       rect:
         serializedVersion: 2
         x: 192
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30efe26a3eaa9d247a4c4c0f2402007d
-      internalID: -132419467
+      spriteID: 2c10aa0e7cccff84f9bc79addf4f52e9
+      internalID: -1807152941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_FarmerJump1_4
+      name: Spritesheet_ShovelSlash_Bronze_shortend_4
       rect:
         serializedVersion: 2
         x: 256
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 260d20b45be8d054a83149be4427875d
-      internalID: -1342993487
+      spriteID: 8f5ef4979623f7f4ea424b37f2439cc9
+      internalID: 281932120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_FarmerJump1_5
+      name: Spritesheet_ShovelSlash_Bronze_shortend_5
       rect:
         serializedVersion: 2
         x: 320
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d293d5d37ac15be458f847cb3ebdafef
-      internalID: -1937046636
+      spriteID: 97a99ab15aa88db4a8ce96d53a3a503c
+      internalID: 967606945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_FarmerJump1_6
+      name: Spritesheet_ShovelSlash_Bronze_shortend_6
       rect:
         serializedVersion: 2
         x: 384
@@ -245,113 +245,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00ae56ffde29000459db031324f9b099
-      internalID: -382010834
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_FarmerJump1_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e6862e41e3aed040a0a1827a7309788
-      internalID: 1073686603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_FarmerJump1_8
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2455c65e60be53438fa97911ad371d3
-      internalID: -2080158845
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_FarmerJump1_9
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58ee659bc7a7d1f479007d6ab8006e3a
-      internalID: 1604659517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_FarmerJump1_10
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37431c89a0be49a41a21255c7fd61413
-      internalID: -330135729
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_FarmerJump1_11
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dfc248b115cd6de4db6fdda70f7a0225
-      internalID: 1229386657
+      spriteID: 413689dc8ef1253479c69c4e1c0d6105
+      internalID: 1627396910
       vertices: []
       indices: 
       edges: []
@@ -367,18 +262,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spritesheet_FarmerJump1_0: -1359009168
-      Spritesheet_FarmerJump1_3: -132419467
-      Spritesheet_FarmerJump1_7: 1073686603
-      Spritesheet_FarmerJump1_5: -1937046636
-      Spritesheet_FarmerJump1_11: 1229386657
-      Spritesheet_FarmerJump1_6: -382010834
-      Spritesheet_FarmerJump1_9: 1604659517
-      Spritesheet_FarmerJump1_1: -176538247
-      Spritesheet_FarmerJump1_4: -1342993487
-      Spritesheet_FarmerJump1_8: -2080158845
-      Spritesheet_FarmerJump1_10: -330135729
-      Spritesheet_FarmerJump1_2: -313201808
+      Spritesheet_ShovelSlash_Bronze_shortend_6: 1627396910
+      Spritesheet_ShovelSlash_Bronze_shortend_0: 646006018
+      Spritesheet_ShovelSlash_Bronze_shortend_2: -1309487452
+      Spritesheet_ShovelSlash_Bronze_shortend_5: 967606945
+      Spritesheet_ShovelSlash_Bronze_shortend_1: 228702395
+      Spritesheet_ShovelSlash_Bronze_shortend_3: -1807152941
+      Spritesheet_ShovelSlash_Bronze_shortend_4: 281932120
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
