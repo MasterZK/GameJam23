@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    [SerializeField] private Items itemType;
+    private bool pickedUp = false;
+
     [SerializeField] private Transform connectionPoint;
     [SerializeField] private Collider2D toolCollider;
     [SerializeField] private Rigidbody2D toolBody;
 
     private GameObject playerUI = null;
     private GameObject player = null;
-    private bool pickedUp = false;
 
     private void Start()
     {
