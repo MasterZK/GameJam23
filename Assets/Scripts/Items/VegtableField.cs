@@ -21,6 +21,11 @@ public class VegtableField : MonoBehaviour
         itemManager = GameObject.FindObjectOfType<ItemManager>();
     }
 
+    private void Update()
+    {
+        //update growing and wilting process
+    }
+
     private void plantSeed(VegtableSeedScriptable seed)
     {
         this.seed = seed;
@@ -36,10 +41,6 @@ public class VegtableField : MonoBehaviour
 
         grown = true;
         timer = 0;
-
-        //spawn vegtable pick up 
-        // unsimulated nocollision
-
     }
 
     private void wiltPlant()
@@ -50,6 +51,7 @@ public class VegtableField : MonoBehaviour
         if (timer < seed.wiltTime)
             return;
 
+        wilted = true;
     }
 
     public void farmPlant()
@@ -64,7 +66,26 @@ public class VegtableField : MonoBehaviour
         {
             var playerTool = itemManager.getToolID(player.currentItem);
 
+            if (playerTool == 2 && grown && !wilted)
+            {
+                //startfarming
+            }
 
+            if (playerTool == 2 && wilted)
+            {
+                //start removing wilted
+            }
+
+            if (playerTool == 0 && !planted)
+            {
+                plantSeed(player.currentItem as VegtableSeedScriptable);
+            }
+
+            if (playerTool == 1 && planted)
+            {
+                watered = true;
+                //start watering plant
+            }
         }
     }
 

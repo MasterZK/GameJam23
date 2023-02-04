@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//reference ids for tools array in itemmanager
 public enum Tools
 {
     WateringCan = 1,
