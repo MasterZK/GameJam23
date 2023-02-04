@@ -6,7 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "new PlayerMoney",menuName ="ScriptableObjects/PlayerRessources/PlayerMoney")]
 public class PlayerMoney : ScriptableObject
 {
-    private int currMoney;
+    [SerializeField] private int startMoney = 0;
+    [SerializeField]private int currMoney;
     public int CurrMoney
     {
         get { return currMoney; }
@@ -15,6 +16,10 @@ public class PlayerMoney : ScriptableObject
     private Action<int> OnMoneyChange;
     private Action<int> OnTotalUpdated;
 
+    public void Initialize()
+    {
+        currMoney = startMoney;
+    }
     public void AddMoney(int _valueToAdd)
     {
         OnMoneyChange?.Invoke(_valueToAdd);
@@ -53,6 +58,4 @@ public class PlayerMoney : ScriptableObject
     {
         OnTotalUpdated -= _action;
     }
-    
-
 }
