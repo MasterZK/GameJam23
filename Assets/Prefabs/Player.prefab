@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd1227bdb8b67544ba4669d5f004eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerMovespeed: 5
+  PlayerMovespeed: 0.5
   PlayerJumpForce: 5
   groundLayer:
     serializedVersion: 2
