@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] private Items itemType;
+    private ScriptableObject itemType; 
+
+    [SerializeField] public bool Interactable = true;
     private bool pickedUp = false;
 
     [SerializeField] private Transform connectionPoint;
@@ -29,7 +31,7 @@ public class Item : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (pickedUp)
+        if (pickedUp || !Interactable)
             return;
 
         if (other.TryGetComponent<PlayerUI>(out PlayerUI player))
@@ -42,7 +44,7 @@ public class Item : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (pickedUp)
+        if (pickedUp || !Interactable)
             return;
 
         if (playerUI == null)
@@ -57,12 +59,14 @@ public class Item : MonoBehaviour
             this.transform.localPosition = Vector3.zero;
             toolCollider.enabled = false;
             toolBody.simulated = false;
+
+            //add to player inventory
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (pickedUp)
+        if (pickedUp || !Interactable)
             return;
 
         playerUI.SetActive(false);
