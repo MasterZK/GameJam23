@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator anim;
+    private SpriteRenderer spriteRenderer;
 
     private Vector2 moveImput;
 
@@ -24,15 +25,22 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim= GetComponent<Animator>();
+        spriteRenderer= GetComponent<SpriteRenderer>();
     }
     private void Update()
     {
         transform.Translate(new Vector3(moveImput.x,0,0) * PlayerMovespeed * Time.deltaTime);
         isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, 0.3f, groundLayer);
 
-        if (moveImput.x < 0 || moveImput.x > 0)
+        if (moveImput.x > 0.2)
         {
             ChangeAnimationState("PlayerWalk");
+            spriteRenderer.flipX = false;
+        }
+        else if (moveImput.x < -0.2f)
+        {
+            ChangeAnimationState("PlayerWalk");
+            spriteRenderer.flipX= true;
         }
         else
         {
@@ -50,9 +58,8 @@ public class PlayerController : MonoBehaviour
 
         if (ctx.performed && isGrounded)
         {
-            
+            rb.AddForce(Vector3.up * PlayerJumpForce, ForceMode2D.Impulse);
             anim.PlayInFixedTime("PlayerJump");
-            StartCoroutine(jump());
         }
     }
 
@@ -66,9 +73,4 @@ public class PlayerController : MonoBehaviour
   
     }
 
-    IEnumerator jump()
-    {
-        yield return new WaitForSeconds(0.2f);
-        rb.AddForce(Vector3.up * PlayerJumpForce, ForceMode2D.Impulse);
-    } 
 }
