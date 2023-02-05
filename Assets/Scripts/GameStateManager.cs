@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -11,9 +12,14 @@ public enum EGameState
 public class GameStateManager : MonoBehaviour
 {
     [SerializeField] private EGameState currState = EGameState.INIT;
+    [SerializeField] private PlayerRuntimeCollection playerCollection;
+    private List<PlayerController> playerList;
+    [SerializeField]private AudioSource audioSource;
 
     [Header("Day")]
     [SerializeField] private GameObject dayLevel;
+    [SerializeField] private GameObject daySpawn;
+    [SerializeField] private AudioClip dayClip;
     [SerializeField] private Slider sunSlider;
     [SerializeField, Min(0.01f)] private float dayTime = 60f;
     private float dayTimer;
@@ -21,6 +27,8 @@ public class GameStateManager : MonoBehaviour
 
     [Header("Night")]
     [SerializeField] private GameObject nightLevel;
+    [SerializeField] private GameObject nightSpawn;
+    [SerializeField] private AudioClip nightClip;
     [SerializeField] private Bed bed;
     public UnityEvent OnNightFall;
 
@@ -82,12 +90,25 @@ public class GameStateManager : MonoBehaviour
                 OnDayBreak?.Invoke();
                 dayLevel.SetActive(true);
                 DayTimer = 0;
-                //TODO:Set player position
+
+                playerList = playerCollection.GetPlayerList();
+                for (int i = 0; i < playerList.Count; i++)
+                {
+                    playerList[i].gameObject.transform.position = daySpawn.transform.position;
+                }
+                audioSource.clip = dayClip;
+                audioSource.Play();
                 break;
             case EGameState.NIGHT:
                 OnNightFall?.Invoke();
                 nightLevel.SetActive(true);
-                //TODO:Set player position
+                playerList = playerCollection.GetPlayerList();
+                for (int i = 0; i < playerList.Count; i++)
+                {
+                    playerList[i].gameObject.transform.position = nightSpawn.transform.position;
+                }
+                audioSource.clip = nightClip;
+                audioSource.Play();
                 break;
         }
     }

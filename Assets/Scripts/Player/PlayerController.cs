@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private PlayerRuntimeCollection playerCollection;
+
     public float PlayerMovespeed;
     public float PlayerJumpForce;
 
@@ -175,6 +177,14 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         canMove = true;
+    }
+    private void OnEnable()
+    {
+        playerCollection.AddToCollection(this);
+    }
+    private void OnDisable()
+    {
+        playerCollection.RemoveFromCollection(this);
     }
 
 }
