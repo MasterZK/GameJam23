@@ -20,6 +20,24 @@ public class Item : MonoBehaviour
         toolBody = GetComponent<Rigidbody2D>();
     }
 
+    protected virtual void Interact()
+    {
+        PickUpItem();
+    }
+
+    private void PickUpItem()
+    {
+        playerUI.SetActive(false);
+        pickedUp = true;
+
+        this.transform.parent = player.transform;
+        this.transform.localPosition = Vector3.zero;
+        toolCollider.enabled = false;
+        toolBody.simulated = false;
+
+        //add to player inventory
+    }
+
     public void DropItem()
     {
         pickedUp = false;
@@ -52,15 +70,7 @@ public class Item : MonoBehaviour
 
         if (Input.GetKey(KeyCode.E))
         {
-            playerUI.SetActive(false);
-            pickedUp = true;
-
-            this.transform.parent = player.transform;
-            this.transform.localPosition = Vector3.zero;
-            toolCollider.enabled = false;
-            toolBody.simulated = false;
-
-            //add to player inventory
+            Interact();
         }
     }
 
