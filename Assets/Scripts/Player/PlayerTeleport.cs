@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerteTeport : MonoBehaviour
+public class PlayerTeleport : MonoBehaviour
 {
     [SerializeField] private GameObject point;
     [SerializeField] private float force;
