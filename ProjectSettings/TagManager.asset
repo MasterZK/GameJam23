@@ -45,6 +45,9 @@ TagManager:
   - name: Background
     uniqueID: 616231699
     locked: 0
+  - name: Vegy
+    uniqueID: 2453988261
+    locked: 0
   - name: Characters
     uniqueID: 3466424455
     locked: 0
