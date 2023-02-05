@@ -21,9 +21,12 @@ public class VegtableField : MonoBehaviour
         itemManager = GameObject.FindObjectOfType<ItemManager>();
     }
 
+    private event System.Action OnUpdate;
+
     private void Update()
     {
-        //update growing and wilting process
+        if (OnUpdate != null)
+            OnUpdate();
     }
 
     private void plantSeed(VegtableSeedScriptable seed)
@@ -33,6 +36,9 @@ public class VegtableField : MonoBehaviour
 
     private void growPlant()
     {
+        if (!watered)
+            return;
+
         timer += Time.deltaTime;
         growProgress = timer / seed.growTime;
 
@@ -41,6 +47,11 @@ public class VegtableField : MonoBehaviour
 
         grown = true;
         timer = 0;
+
+        //change texture on grown
+
+        OnUpdate -= growPlant;
+        OnUpdate += wiltPlant;
     }
 
     private void wiltPlant()
@@ -52,10 +63,16 @@ public class VegtableField : MonoBehaviour
             return;
 
         wilted = true;
+
+        //change texture on wilted
+
+        OnUpdate -= wiltPlant;
     }
 
-    public void farmPlant()
+    private void farmPlant()
     {
+        planted = watered = grown = wilted = false;
+
         Instantiate(seed.grownPlant, this.transform.position, Quaternion.identity);
         seed = null;
     }
@@ -64,6 +81,8 @@ public class VegtableField : MonoBehaviour
     {
         if (collision.TryGetComponent<PlayerUI>(out PlayerUI player))
         {
+            player.currentObject.SetActive(true);
+
             var playerTool = itemManager.getToolID(player.currentItem);
 
             if (playerTool == 2 && grown && !wilted)
@@ -84,10 +103,16 @@ public class VegtableField : MonoBehaviour
             if (playerTool == 1 && planted)
             {
                 watered = true;
-                //start watering plant
+                OnUpdate += growPlant;
             }
         }
     }
 
-
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent<PlayerUI>(out PlayerUI player))
+        {
+            player.currentObject.SetActive(false);
+        }
+    }
 }

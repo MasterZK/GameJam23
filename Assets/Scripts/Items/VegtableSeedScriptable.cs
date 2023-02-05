@@ -8,5 +8,6 @@ public class VegtableSeedScriptable : ScriptableObject
     public float farmTime;
 
     public GameObject grownPlant;
-    public Sprite wiltPlant;
+    public Sprite grownPlantSprite;
+    public Sprite wiltPlantSprite;
 }
