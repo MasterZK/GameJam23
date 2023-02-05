@@ -5,43 +5,15 @@ public class Item : MonoBehaviour
     [SerializeField] private ScriptableObject itemType; 
     [SerializeField] public bool Interactable = true;
 
-    [SerializeField] private Transform connectionPoint;
-    [SerializeField] private Collider2D toolCollider;
-    [SerializeField] private Rigidbody2D toolBody;
+    private PlayerUI playerUI = null;
+    private PlayerController player = null;
 
-    private GameObject playerUI = null;
-    private GameObject player = null;
-
-    private void Start()
+    public void PickUp()
     {
-        toolCollider = GetComponent<Collider2D>();
-        toolBody = GetComponent<Rigidbody2D>();
-    }
+        player.currentItem = this.itemType;
+        player.itemInRange = null;
 
-    protected virtual void Interact()
-    {
-        PickUpItem();
-    }
-
-    private void PickUpItem()
-    {
-        playerUI.SetActive(false);
-
-        this.transform.parent = player.transform;
-        this.transform.localPosition = Vector3.zero;
-        toolCollider.enabled = false;
-        toolBody.simulated = false;
-
-        //add to player inventory
-    }
-
-    public void DropItem()
-    {
-       // pickedUp = false;
-
-        this.transform.parent = null;
-        toolCollider.enabled = true;
-        toolBody.simulated = true;
+        Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -54,12 +26,10 @@ public class Item : MonoBehaviour
             var playerUI = player.GetComponent<PlayerUI>();
 
             playerUI.currentObject.SetActive(true);
-            this.player = playerUI.gameObject;
-            this.playerUI = playerUI.currentObject;
+            this.playerUI = playerUI;
+            this.player = player;
 
-           // player.pickableItem 
-
-
+            player.itemInRange = this.itemType; 
         }
     }
 
@@ -68,9 +38,11 @@ public class Item : MonoBehaviour
         if (!Interactable)
             return;
 
-        playerUI.SetActive(false);
-
+        playerUI.currentObject.SetActive(false);
         playerUI = null;
         player = null;
+
+        player.itemInRange = null;
     }
+  
 }
