@@ -73,6 +73,7 @@ public class TimeCycle : MonoBehaviour
 
     public TimeFormat CurrentTime;
 
+    public bool startTime = false;
     private float timeLastCycle;
 
     private void Start()
@@ -91,6 +92,9 @@ public class TimeCycle : MonoBehaviour
 
     private void deltaToTime()
     {
+        if (!startTime)
+            return;
+
         timeLastCycle += Time.deltaTime;
 
         if (timeLastCycle < minuteDuration)
@@ -112,6 +116,11 @@ public class TimeCycle : MonoBehaviour
             CurrentTime.AM_PM = !CurrentTime.AM_PM;
         }
 
+    }
+
+    public DayNightCycle GetDayNightState()
+    {
+        return CurrentTime.CurrentState;
     }
 
     private void printTime()
