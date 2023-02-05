@@ -24,6 +24,26 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 moveInput;
 
+
+    public IInteractable possibleInteractable = null;
+    public ItemPickup possiblePickup = null;
+    [SerializeField] private BaseItem equipedItem;
+    public GameObject itemPickup;
+    public float verticalOffset = 0;
+    public float dropForce = 0;
+
+    public BaseItem EquipedItem
+    {
+        get
+        {
+            return equipedItem;
+        }
+        set
+        {
+            equipedItem = value;
+        }
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -76,7 +96,22 @@ public class PlayerController : MonoBehaviour
 
     public void OnItemSwitch(InputAction.CallbackContext ctx)
     {
+        if (ctx.performed)
+        {
+            if (EquipedItem != null)
+            {
+                GameObject clone = Instantiate(itemPickup, transform.position + Vector3.up * verticalOffset, Quaternion.identity);
+                clone.GetComponent<ItemPickup>().ItemData = EquipedItem;
+                Vector2 forceDir = new Vector2(Random.Range(-1, 1), 1);
+                clone.GetComponent<Rigidbody2D>().AddForce(forceDir * dropForce, ForceMode2D.Impulse);
 
+                EquipedItem = null;
+            }
+            else if (possiblePickup != null)
+            {
+                possiblePickup.PickUp(out equipedItem);
+            }
+        }
 
     }
     public void OnPlayerIteract(InputAction.CallbackContext ctx)
