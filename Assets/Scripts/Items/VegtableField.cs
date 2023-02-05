@@ -4,6 +4,9 @@ public class VegtableField : MonoBehaviour
 {
     VegtableSeedScriptable seed;
 
+    private SpriteRenderer spriteRenderer;
+    private Sprite farmLandSprite;
+
     private float growProgress;
     private float wiltingProgress;
 
@@ -19,6 +22,9 @@ public class VegtableField : MonoBehaviour
     private void Start()
     {
         itemManager = GameObject.FindObjectOfType<ItemManager>();
+
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private event System.Action OnUpdate;
@@ -48,7 +54,7 @@ public class VegtableField : MonoBehaviour
         grown = true;
         timer = 0;
 
-        //change texture on grown
+        spriteRenderer.sprite = seed.grownPlantSprite;
 
         OnUpdate -= growPlant;
         OnUpdate += wiltPlant;
@@ -64,7 +70,7 @@ public class VegtableField : MonoBehaviour
 
         wilted = true;
 
-        //change texture on wilted
+        spriteRenderer.sprite = seed.wiltPlantSprite;
 
         OnUpdate -= wiltPlant;
     }
@@ -75,6 +81,8 @@ public class VegtableField : MonoBehaviour
 
         Instantiate(seed.grownPlant, this.transform.position, Quaternion.identity);
         seed = null;
+
+        spriteRenderer.sprite = farmLandSprite;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -88,11 +96,13 @@ public class VegtableField : MonoBehaviour
             if (playerTool == 2 && grown && !wilted)
             {
                 //startfarming
+                farmPlant();
             }
 
             if (playerTool == 2 && wilted)
             {
                 //start removing wilted
+                spriteRenderer.sprite = farmLandSprite;
             }
 
             if (playerTool == 0 && !planted)

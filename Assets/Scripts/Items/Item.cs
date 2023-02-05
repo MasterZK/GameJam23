@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    private ScriptableObject itemType; 
-
+    [SerializeField] private ScriptableObject itemType; 
     [SerializeField] public bool Interactable = true;
     private bool pickedUp = false;
 
