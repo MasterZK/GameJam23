@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, 0.3f, groundLayer);
+       
         if (canMove)
         {
             transform.Translate(new Vector3(moveInput.x, 0, 0) * PlayerMovespeed * Time.deltaTime);
@@ -114,17 +115,21 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    public void OnPlayerIteract(InputAction.CallbackContext ctx)
+    public void OnPlayerInteract(InputAction.CallbackContext ctx)
     {
-        float time = 1;
-        string animation = "";
-        if (false)
+        //float time = 1;
+        //string animation = "";
+        //if (false)
+        //{
+        //    startcoroutine(playerinteraction(time, animation));
+        //}
+        //else
+        //{
+        //}
+        if (ctx.performed && canMove)
         {
-            StartCoroutine(PlayerInteraction(time, animation));
-        }
-        else
-        {
-            ChangeAnimationState("Attack");
+            StartCoroutine(PlayerAttack(0.3f, "Attack_1"));
+
         }
 
     }
@@ -159,6 +164,14 @@ public class PlayerController : MonoBehaviour
     {
         canMove = false;
         ChangeAnimationState(animation);
+        yield return new WaitForSeconds(time);
+
+        canMove = true;
+    }
+    IEnumerator PlayerAttack(float time, string animation)
+    {
+        canMove = false;
+        anim.PlayInFixedTime(animation);
         yield return new WaitForSeconds(time);
 
         canMove = true;
