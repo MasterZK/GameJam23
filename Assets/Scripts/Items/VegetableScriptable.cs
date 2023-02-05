@@ -1,18 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/VegetableScriptable", order = 3)]
 public class VegetableScriptable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject prefab;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int value;
+    public Sprite sprite;
 }

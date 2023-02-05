@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float PlayerMovespeed;
     public float PlayerJumpForce;
 
+    public ScriptableObject currentItem;
+    public ScriptableObject itemInRange;
 
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private GameObject groundCheck;
