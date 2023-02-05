@@ -160,7 +160,7 @@ public class Rat : MonoBehaviour
                 break;
             case ERatState.RAT_STUN:
                 timer = 0;
-                ChangeAnimationState("");
+                ChangeAnimationState(idleAnimation);
                 break;
         }
 

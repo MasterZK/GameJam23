@@ -37,7 +37,7 @@ public class Item : MonoBehaviour
 
     public void DropItem()
     {
-        pickedUp = false;
+       // pickedUp = false;
 
         this.transform.parent = null;
         toolCollider.enabled = true;
@@ -57,7 +57,7 @@ public class Item : MonoBehaviour
             this.player = playerUI.gameObject;
             this.playerUI = playerUI.currentObject;
 
-            player.pickableItem 
+           // player.pickableItem 
 
 
         }

@@ -2130,6 +2130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 999278249055218465, guid: dabd0402e8a172a40a1f24c30d0baca2, type: 3}
+      propertyPath: idleAnimation
+      value: RatIdle
+      objectReference: {fileID: 0}
     - target: {fileID: 6616690191396130972, guid: dabd0402e8a172a40a1f24c30d0baca2, type: 3}
       propertyPath: m_SortingLayer
       value: 2
