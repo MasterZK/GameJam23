@@ -66,6 +66,11 @@ public class Rat : MonoBehaviour
             case ERatState.RAT_WALK:
                 transform.Translate(Vector2.right * movementSpeed * Time.deltaTime);
                 //movement
+                //if (Input.GetKeyDown(KeyCode.Space))
+                //{
+                //    StartJump();
+                //}
+                
                 break;
             case ERatState.RAT_JUMP:
                 timer += Time.deltaTime;
