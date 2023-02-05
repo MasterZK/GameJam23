@@ -4,7 +4,6 @@ public class Item : MonoBehaviour
 {
     [SerializeField] private ScriptableObject itemType; 
     [SerializeField] public bool Interactable = true;
-    private bool pickedUp = false;
 
     [SerializeField] private Transform connectionPoint;
     [SerializeField] private Collider2D toolCollider;
@@ -27,7 +26,6 @@ public class Item : MonoBehaviour
     private void PickUpItem()
     {
         playerUI.SetActive(false);
-        pickedUp = true;
 
         this.transform.parent = player.transform;
         this.transform.localPosition = Vector3.zero;
@@ -48,34 +46,26 @@ public class Item : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (pickedUp || !Interactable)
+        if (!Interactable)
             return;
-
-        if (other.TryGetComponent<PlayerUI>(out PlayerUI player))
+        
+        if (other.TryGetComponent<PlayerController>(out PlayerController player))
         {
-            player.currentObject.SetActive(true);
-            this.player = player.gameObject;
-            playerUI = player.currentObject;
-        }
-    }
+            var playerUI = player.GetComponent<PlayerUI>();
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (pickedUp || !Interactable)
-            return;
+            playerUI.currentObject.SetActive(true);
+            this.player = playerUI.gameObject;
+            this.playerUI = playerUI.currentObject;
 
-        if (playerUI == null)
-            return;
+            player.pickableItem 
 
-        if (Input.GetKey(KeyCode.E))
-        {
-            Interact();
+
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (pickedUp || !Interactable)
+        if (!Interactable)
             return;
 
         playerUI.SetActive(false);
